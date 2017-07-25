@@ -9,15 +9,16 @@ SC.initialize ({
 SC.get("/tracks").then(function(response) {
   info = document.querySelector("div")
 
+
   template = `
   <div class="container">
     <div class = "image">
-      <img src="{{artwork_url}}" width="150px" height:"150px">
+      ${response[0].artwork_url ? ('<img src="{{artwork_url}}" width="150px" height:"150px">') : ""}
     </div>
     <h2 class="title"><a href="{{permalink_url}}">{{title}}</a></h2><hr>
     <h2 class="artist"><a href="{{user.permalink_url}}">{{user.username}}</a></h2>
-    <p class="genre">Genre: {{genre}}</p>
-    <p class="release">Released in: {{release_year}}</p>
+    ${response[0].genre ? ('<p class="genre">Genre: {{genre}}</p>') : ""}
+    ${response[0].release_year ? ('<p class="release">Released in: {{release_year}}</p>') : ""}
     <p id="id" data-id={{id}}></p>
   </div>  
 `
