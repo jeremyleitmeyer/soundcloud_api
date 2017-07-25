@@ -8,21 +8,19 @@ SC.initialize ({
 
 SC.get("/tracks").then(function(response) {
   info = document.querySelector("div")
-  // if()
 
   template = `
   <div class="container">
     <div class = "image">
       <img src="{{artwork_url}}" width="150px" height:"150px">
     </div>
-    <h3 class="title"><a href="{{permalink_url}}">{{title}}</a></h3>
-    <h3 class="artist"><a href="{{user.permalink_url}}">{{user.username}}</a></h3>
+    <h2 class="title"><a href="{{permalink_url}}">{{title}}</a></h2><hr>
+    <h2 class="artist"><a href="{{user.permalink_url}}">{{user.username}}</a></h2>
     <p class="genre">Genre: {{genre}}</p>
     <p class="release">Released in: {{release_year}}</p>
     <p id="id" data-id={{id}}></p>
   </div>  
 `
-  
   info.innerHTML = Mustache.render(template, response[0]);
 
   help = document.getElementById("id")

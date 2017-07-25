@@ -1,10 +1,11 @@
-body {
-  background-color: gray;
+html { 
+  background: url(https://i.giphy.com/media/l0HlySkU6z5Mot5U4/source.gif) no-repeat center center fixed; 
+  background-size: cover;
   font-family: 'Roboto', sans-serif;;
 }
 
 .container {
-  background-color: antiquewhite;
+  background-color: rgba(255, 255, 255, 0.7);
   text-align: center;
   width: 60%;
   margin: 0 auto;
@@ -26,15 +27,24 @@ a {
   text-align: center;
 }
 
+hr {
+  width: 400px;
+}
+
 button {
   font-size: 18px;
   width: 80px;
   height: 30px;
-  background-color: antiquewhite;
+  background-color: white;
   border-radius: 10px;
   margin: 10px;
+  outline: none;
 }
 
 button:hover {
   background-color: white;
+}
+
+#hidden = {
+  display: none;
 }
